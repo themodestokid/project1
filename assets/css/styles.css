@@ -1,0 +1,79 @@
+.all {
+    background-color: #F8E5F5;
+}
+.header {
+    margin-top: 10px;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-right: 40px;
+    padding: 1px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    margin: 0; 
+}
+.card {
+    background-color: #f5f0e0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+.card-img-top {
+    width: 100%; /* Make the image fit the card's width */
+    height: 350px; /* Set a consistent height for all images */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the space */
+    border-top-left-radius: 20px; /* Optional: rounded corners */
+    border-top-right-radius: 20px;
+}
+.text-center {
+    margin: 40px 0 30px 0;
+}
+
+.card-text {
+    line-height: 1.6;
+    padding-top: 10px;
+}
+
+.my-custom-navbar{
+    color: white;
+    background-color: #f5f0e0;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+.nav-item {
+    border-radius: 8px;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand {
+    padding: 5px 12px 5px 12px;
+    border-radius: 8px;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+
+.list-group-item {
+    color: white;
+    background-color: #EB7BCE;
+    padding: 10px;
+}
