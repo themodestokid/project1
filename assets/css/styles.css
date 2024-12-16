@@ -50,6 +50,10 @@
 
 .my-custom-navbar{
     color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #f5f0e0;
     border-radius: 10px;
     background-size: cover;
