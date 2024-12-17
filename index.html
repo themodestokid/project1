@@ -9,24 +9,50 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg my-custom-navbar">
-        <a class="navbar-brand" href="#">Bartender's Recipe Book</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <h1>Bartender's Recipe Book</h1>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Recipes</a>
+                    <a class="nav-link" href="#recipes">Recipes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Add Recipe</a>
+                    <a class="nav-link" href="#exampleModalCenter" data-toggle = "modal" data-target= "#exampleModalCenter">Add Recipe</a>
                 </li>
             </ul>
         </div>
     </nav>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="drinkInput">Drink Name</label>
+                <input type="drink" class="form-control" id="drinkInput" aria-describedby="emailHelp" placeholder="Enter Drink Name">
+              </div>
+              <div class="form-group">
+                <label for="ingredientsInput">Ingredients</label>
+                <input type="ingredients" class="form-control" id="ingredientsInput" placeholder="Ingredients">
+              </div>
+              <div class="form-group">
+                <label for="stepsInput">Steps</label>
+                <input type="steps" class="form-control" id="stepsInput" placeholder="Steps">
+              </div>
+              <button type="submit" class="btn-primary" data-dismiss="modal">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <header>
     <div class="header">
@@ -38,7 +64,7 @@
         <aside><img src="assets/images/drink.jpg"></aside>
     </div>
     </header>
-    <main>
+    <main id = "recipes">
     <section class="box">
     <div class="card" style="width: 21rem;">
         <img src="https://punchdrink.com/wp-content/uploads/2013/09/Manhattan.jpg" 

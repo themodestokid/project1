@@ -59,8 +59,11 @@
 }
 
 .my-custom-navbar{
-    color: white;
-    background-color: #f5f0e0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #e7a799;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
@@ -69,8 +72,22 @@
     transform: scale(1);
     transition: all 0.3s ease-in-out;
 }
+a {
+    color: black;
+    font-weight: 400;
+    font-family: 'Arial';
+}
+
+h1 {
+    font-family: 'Lucida Handwriting';
+    font-weight: bolder;
+}
+
 .nav-item {
+    margin-left: 50px;
+    font-size: 25px;
     border-radius: 8px;
+    border-style: groove;
     transform: scale(1);
     transition: all 0.3s ease-in-out;
 }
