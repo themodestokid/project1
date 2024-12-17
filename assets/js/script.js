@@ -2,6 +2,7 @@
     // starterDrinks array.
 const starterDrinks = [
     {
+
         title: 'Gin and Tonic',
         ingredients: ['2 parts gin', '3 parts tonic water', 'wedge of lime'],
         steps: ['mix gin and tonix over ice', 'serve with lime']
@@ -32,6 +33,7 @@ button.addEventListener('click', function () {
 });
     // global array of drink recipes
 
+let recipes;
 
 function writeLocalStorage() {
     console.log('wriring recipes ', recipes)
