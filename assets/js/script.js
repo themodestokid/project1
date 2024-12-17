@@ -16,8 +16,7 @@ const drinkNameInput = document.querySelector('#drinkInput');
 const ingredientsInput = document.querySelector('#ingredientsInput');
 const stepsInput = document.querySelector('#stepsInput');
 const button = document.querySelector('.btn-primary');
-let recipes = [];
-writeLocalStorage();
+let recipes;
 
 button.addEventListener('click', function () {
     event.preventDefault();
@@ -35,6 +34,7 @@ button.addEventListener('click', function () {
 
 
 function writeLocalStorage() {
+    console.log('wriring recipes ', recipes)
     localStorage.setItem('drinkRecipes', JSON.stringify(recipes));
 }
 
@@ -58,11 +58,24 @@ function readLocalStorage() {
     return JSON.parse(data);
 }
 
+function renderCard(recipe) {
+    const card = document.createElement('div');
+    card.setAttribute('class', 'card');
+    card.textContent = recipe.title;
+    return card;
+}
+
 function fillCardCarousel() {
-    //placeholder
+    const carousel = document.getElementById("recipes");
+    carousel.innerHTML = "";
+    for (recipe of recipes) {
+        console.log('appending card for ' + recipe.title)
+        carousel.appendChild(renderCard(recipe));
+    }
 }
 
 // Execute starter code when application loads:
 
-// recipes = readLocalStorage();
+recipes = readLocalStorage();
+console.log('read recipes: ', recipes)
 fillCardCarousel();
