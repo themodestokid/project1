@@ -33,6 +33,18 @@ function writeLocalStorage() {
     localStorage.setItem('drinkRecipes', JSON.stringify(recipes));
 }
 
+function addRecipe(recipe) {
+    recipes.push(recipe);
+    writeLocalStorage(recipes);
+    fillCardCarousel();
+}
+
+function editRecipe(index, recipe) {
+    recipes[index] = recipe;
+    writeLocalStorage(recipes);
+    fillCardCarousel();
+}
+
 function readLocalStorage() {
     const data = localStorage.getItem('drinkRecipes');
     if (!data) {
