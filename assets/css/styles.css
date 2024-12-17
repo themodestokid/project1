@@ -74,6 +74,7 @@
     transition: all 0.3s ease-in-out;
 }
 .nav-item {
+    margin-left: 10px;
     border-radius: 8px;
     transform: scale(1);
     transition: all 0.3s ease-in-out;

@@ -12,12 +12,25 @@ const starterDrinks = [
         steps: ['mix Jack and Coke over ice', 'serve with lemon']
     }
 ]
+const drinkNameInput = document.querySelector('#drinkInput');
+const ingredientsInput = document.querySelector('#ingredientsInput');
+const stepsInput = document.querySelector('#stepsInput');
+const button = document.querySelector('.btn-primary');
 
-    // global array of drink recipes 
-let recipes;
+button.addEventListener('click', function () {
+    event.preventDefault();
+    const recipes = {
+        drinkName: drinkNameInput.value.trim(),
+        ingredients: ingredientsInput.value.trim(),
+        steps: stepsInput.value.trim(),
+    }
+    localStorage.setItem('drinkRecipes', JSON.stringify(recipes));
+});
+    // global array of drink recipes
+// let recipes;
 
-function writeLocalStorage(recipes) {
-    localStorage.setItem('drinkRecipes'. JSON.stringify(recipes));
+function writeLocalStorage() {
+    localStorage.setItem('drinkRecipes', JSON.stringify(recipes));
 }
 
 function readLocalStorage() {
@@ -34,6 +47,5 @@ function fillCardCarousel() {
 
 // Execute starter code when application loads:
 
-recipes = readLocalStorage();
+// recipes = readLocalStorage();
 fillCardCarousel();
-
