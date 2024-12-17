@@ -3,6 +3,16 @@
 }
 .header {
     margin-top: 10px;
+    display:flex;
+    flex-flow:row;
+    justify-content: center;
+}
+.header img {
+    margin-left:20px;
+    height:300px;
+}
+.header button {
+    margin-left:35px;
 }
 
 .box {
