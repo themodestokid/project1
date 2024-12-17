@@ -59,12 +59,12 @@
 }
 
 .my-custom-navbar{
-    color: white;
+    color: black;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #f5f0e0;
+    background-color: #ffc6c2;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
