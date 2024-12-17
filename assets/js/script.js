@@ -1,19 +1,18 @@
     // if no recipes are found in local storage, use 
     // starterDrinks array.
-onst starterDrinks = [
+const starterDrinks = [
     {
-        title = 'Gin and Tonic',
-        ingredients = ['2 parts gin', '3 parts tonic water', 'wedge of lime'],
-        steps = ['mix gin and tonix over ice', 'serve with lime']
+        title : 'Gin and Tonic',
+        ingredients : ['2 parts gin', '3 parts tonic water', 'wedge of lime'],
+        steps : ['mix gin and tonix over ice', 'serve with lime']
     },
     {
-        title = 'Jack and Coke',
-        ingredients = ['2 parts Jack Daniels', '3 parts coke', 'wedge of lemon'],
-        steps = ['mix Jack and Coke over ice', 'serve with lemon']
+        title : 'Jack and Coke',
+        ingredients : ['2 parts Jack Daniels', '3 parts coke', 'wedge of lemon'],
+        steps : ['mix Jack and Coke over ice', 'serve with lemon']
     }
 ]
 
-    // global array of drink recipes 
 let recipes;
 
 function writeLocalStorage(recipes) {
@@ -41,10 +40,7 @@ function readLocalStorage() {
 }
 
 function fillCardCarousel() {
-    //placeholder
 }
-
-// Execute starter code when application loads:
 
 recipes = readLocalStorage();
 fillCardCarousel();
