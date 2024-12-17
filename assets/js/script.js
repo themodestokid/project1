@@ -16,18 +16,23 @@ const drinkNameInput = document.querySelector('#drinkInput');
 const ingredientsInput = document.querySelector('#ingredientsInput');
 const stepsInput = document.querySelector('#stepsInput');
 const button = document.querySelector('.btn-primary');
+let recipes = [];
+writeLocalStorage();
 
 button.addEventListener('click', function () {
     event.preventDefault();
-    const recipes = {
+    let storedArray = localStorage.getItem('drinkRecipes');
+    let array = storedArray ? JSON.parse(storedArray) : [];
+    const newRecipe = {
         drinkName: drinkNameInput.value.trim(),
         ingredients: ingredientsInput.value.trim(),
         steps: stepsInput.value.trim(),
     }
-    localStorage.setItem('drinkRecipes', JSON.stringify(recipes));
+    array.push(newRecipe);
+    localStorage.setItem('drinkRecipes', JSON.stringify(array));
 });
     // global array of drink recipes
-// let recipes;
+
 
 function writeLocalStorage() {
     localStorage.setItem('drinkRecipes', JSON.stringify(recipes));
