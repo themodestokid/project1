@@ -1,5 +1,26 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --overlay-bg: hsla(0, 3%, 13%, 0.5);
+  
+    --light-background: hsl(0, 0%, 96%);
+    --light-on-background: hsl(0, 3%, 13%);
+    --light-on-background-variant: hsl(20, 3%, 19%);
+    --light-primary: hsl(11, 87%, 59%);
+    --light-primary-hover: hsl(11, 60%, 50%);
+    --light-primary-container: hsl(14, 57%, 95%);
+    --light-error: hsl(1, 73%, 42%);
+    --light-active-indicator: hsl(12, 58%, 88%);
+    --light-image-background: hsl(0, 0%, 70%);
+    --light-badge-btn: hsl(30, 58%, 88%);
+    --light-on-badge-btn: hsl(24, 7%, 14%);
+    --light-outline: hsl(10, 19%, 88%);
+    --light-input-outline: hsl(7, 7%, 73%);
+    --light-input-outline-hover: hsl(9, 3%, 52%);
+    --light-alpha-10: hsla(0, 0%, 0%, 0.1);
+    --light-alpha-20: hsla(0, 0%, 0%, 0.2);
+}  
 .all {
-    background-color: #F8E5F5;
+    background-color: var(--light-background);
 }
 .header {
     margin-top: 5%;
@@ -15,6 +36,64 @@
     margin-left:35px;
 }
 
+.banner-card {
+  background-color: var(--image-background);
+  color: var(--white);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 550px;
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  text-align: center;
+  padding-inline: 20px;
+  border-radius: var(--radius-8);
+}
+
+.hero .search-wrapper {
+    position: relative;
+    color: var(--on-background);
+    border-radius: var(--radius-4);
+    max-width: 480px;
+    width: 100%;
+    margin-inline: auto;
+    margin-block: 16px 12px;
+    overflow: hidden;
+}
+
+.hero .search-wrapper .leading-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+}
+
+.search-field {
+  height: 56px;
+  background-color: var(--primary-container);
+  padding-inline: 56px;
+  outline: none;
+}
+
+.search-submit {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  width: 48px;
+  display: grid;
+  place-items: center;
+  background-color: var(--primary);
+  color: var(--white);
+  border-radius: var(--radius-4);
+  transition: var(--transition-short);
+}
+
+.search-submit:where(:hover, :focus-visible):not(:active) {
+  background-color: var(--primary-hover);
+}
+
 .box {
     display: flex;
     flex-wrap: wrap;
@@ -26,6 +105,7 @@
     justify-content: center; 
     flex-wrap: wrap; 
     margin: 0; 
+    padding-top: 3%;
 }
 .card {
     background-color: #f5f0e0;
@@ -34,19 +114,19 @@
     background-repeat: no-repeat;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* transform: scale(1); */
+    transform: scale(1);
     transition: all 0.3s ease-in-out;
 }
-/* .card:hover {
+.card:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: scale(1.02);
     transition: all 0.3s ease-in-out;
-} */
+}
 .card-img-top {
-    width: 100%; /* Make the image fit the card's width */
-    height: 350px; /* Set a consistent height for all images */
-    object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the space */
-    border-top-left-radius: 20px; /* Optional: rounded corners */
+    width: 100%; 
+    height: 350px; 
+    object-fit: cover; 
+    border-top-left-radius: 20px; 
     border-top-right-radius: 20px;
 }
 .text-center {
@@ -104,3 +184,94 @@ h1 {
     background-color: #EB7BCE;
     padding: 10px;
 }
+
+.search-field {
+    border-radius: 25px; 
+    padding-left: 25px;
+    font-size: 1.2rem;  
+    border: 1px solid #ccc; 
+    transition: all 0.3s ease; 
+  }
+  
+  .search-field:focus {
+    border-color: #1f8ef1; 
+    box-shadow: 0 0 5px rgba(31, 142, 241, 0.6); 
+  }
+  
+  .input-group .btn {
+    background-color: #1f8ef1;
+    border-radius: 25px;
+    border: none;
+    padding: 16px;
+  }
+  
+  .input-group .btn:hover {
+    background-color: #155a8a;
+  }
+  
+  .input-group .btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(31, 142, 241, 0.6);
+  }
+  
+
+  .input-group {
+    display: flex;
+    align-items: center;
+    max-width: 500px; 
+    margin: auto; 
+  }
+  
+  .input-group-text {
+    background-color: transparent;
+    border: none;
+  }
+
+  .search-field::placeholder {
+    color: #888; 
+  }
+  
+  @media (max-width: 576px) {
+    .input-group {
+      width: 100%;
+    }
+  }
+  
+  .header {
+    background-image: url('../images/hero-bg.jpeg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 700px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+  }
+
+  .carousel {
+    margin-left:28%;
+    width: 50%;
+    height: 100%;
+
+  }
+  
+.carousel-item img {
+    width: 100%;
+    height: 73%;
+    object-fit: cover;
+  }
+  
+
+  .carousel-inner {
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+    overflow: hidden;
+    height: 650px;
+  }
+  
+
+  .carousel-item .card {
+    margin: 10px;
+  }
+  
