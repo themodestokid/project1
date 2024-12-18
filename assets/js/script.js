@@ -139,6 +139,7 @@ function createCardsFromData() {
 
 // Execute starter code when application loads:
 
+console.log("loading")
 recipes = readLocalStorage();
 
 createCardsFromData();
@@ -156,7 +157,7 @@ function updateRecipe(index, ingredients, steps) {
   recipes[index].steps = steps;
 }
 
-document.getElementById('recipes').addEventListener('click', function(event) {
+document.getElementById('cards-holder').addEventListener('click', function(event) {
   console.log(event);
   console.log(event.target.getAttribute('class'))
   if (event.target.getAttribute('class') === 'btn btn-primary' && event.target.textContent == 'Save changes') {
