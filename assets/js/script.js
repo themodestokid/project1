@@ -30,6 +30,8 @@ button.addEventListener('click', function () {
     }
     array.push(newRecipe);
     localStorage.setItem('drinkRecipes', JSON.stringify(array));
+    const test = JSON.parse(localStorage.getItem('drinkRecipes'));
+    console.log(test[0]);
 });
     // global array of drink recipes
 
@@ -66,3 +68,9 @@ function fillCardCarousel() {
 
 // recipes = readLocalStorage();
 fillCardCarousel();
+
+function createCardsFromData() {
+
+}
+
+createCardsFromData();
