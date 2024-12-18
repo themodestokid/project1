@@ -1,32 +1,33 @@
 :root {
-    --white: hsl(0, 0%, 100%);
+    --bg-color-primary: hsl(0, 0%, 100%);
     --overlay-bg: hsla(0, 3%, 13%, 0.5);
-  
-    --light-background: hsl(0, 0%, 96%);
-    --light-on-background: hsl(0, 3%, 13%);
-    --light-on-background-variant: hsl(20, 3%, 19%);
-    --light-primary: hsl(11, 87%, 59%);
-    --light-primary-hover: hsl(11, 60%, 50%);
-    --light-primary-container: hsl(14, 57%, 95%);
-    --light-error: hsl(1, 73%, 42%);
-    --light-active-indicator: hsl(12, 58%, 88%);
-    --light-image-background: hsl(0, 0%, 70%);
-    --light-badge-btn: hsl(30, 58%, 88%);
-    --light-on-badge-btn: hsl(24, 7%, 14%);
-    --light-outline: hsl(10, 19%, 88%);
-    --light-input-outline: hsl(7, 7%, 73%);
-    --light-input-outline-hover: hsl(9, 3%, 52%);
-    --light-alpha-10: hsla(0, 0%, 0%, 0.1);
-    --light-alpha-20: hsla(0, 0%, 0%, 0.2);
+
+    --color-primary:#C79E23;
+    --color-text: #95761A;
+    --color-box: #FCEEC4;
+    --bg-color-secondary: #F5EED8;
+    --color-text-headings: #91782D;
+    
+
+
+    --font-primary:'DM Serif Display', serif;
+    --font-secondary: 'DM Sans', sans-serif;
 }  
-.all {
-    background-color: var(--light-background);
-}
+
 .header {
-    margin-top: 5%;
-    display:flex;
-    flex-flow:row;
-    justify-content: center;
+  background-image: url('../images/hero-bg.webp');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  height: 900px; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;  
+  margin-top: 10px;
+  display:flex;
+  flex-flow:row;
+  justify-content: center;
+  font-family: var(--font-primary);
 }
 .header img {
     margin-left:20px;
@@ -35,10 +36,11 @@
 .header button {
     margin-left:35px;
 }
-
+p {
+  font-family: var(--font-secondary);
+}
 .banner-card {
-  background-color: var(--image-background);
-  color: var(--white);
+  color:var(--color-text-headings);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -49,6 +51,7 @@
   text-align: center;
   padding-inline: 20px;
   border-radius: var(--radius-8);
+  padding-bottom: 250px;
 }
 
 .hero .search-wrapper {
@@ -60,6 +63,7 @@
     margin-inline: auto;
     margin-block: 16px 12px;
     overflow: hidden;
+    
 }
 
 .hero .search-wrapper .leading-icon {
@@ -70,6 +74,7 @@
 }
 
 .search-field {
+  color: var(--bg-color-secondary);
   height: 56px;
   background-color: var(--primary-container);
   padding-inline: 56px;
@@ -84,10 +89,6 @@
   width: 48px;
   display: grid;
   place-items: center;
-  background-color: var(--primary);
-  color: var(--white);
-  border-radius: var(--radius-4);
-  transition: var(--transition-short);
 }
 
 .search-submit:where(:hover, :focus-visible):not(:active) {
@@ -95,6 +96,8 @@
 }
 
 .box {
+    background-color: var(--bg-color-secondary);
+    color: var(--color-text);
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
@@ -108,7 +111,7 @@
     padding-top: 3%;
 }
 .card {
-    background-color: #f5f0e0;
+    background-color: var(--color-box);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -117,6 +120,10 @@
     /* transform: scale(1); */
     transition: all 0.3s ease-in-out;
 }
+.card-title {
+  font-family: var(--font-primary);
+}
+
 /* .card:hover { 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: scale(1.02);
@@ -139,12 +146,17 @@
 }
 
 .my-custom-navbar{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0.5rem 1rem;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #e7a799;
-    border-radius: 10px;
+    background-color:var(--bg-color-secondary);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -152,31 +164,40 @@
     transform: scale(1);
     transition: all 0.3s ease-in-out;
 }
-a {
-    color: black;
-    font-weight: 400;
-    font-family: 'Arial';
-}
-
-h1 {
-    font-family: 'Lucida Handwriting';
-    font-weight: bolder;
+.my-custom-navbar .navbar-nav {
+  display: flex; 
+  gap: 1rem; 
+  margin: 0;
+  padding: 0; 
 }
 
 .nav-item {
     margin-left: 50px;
     font-size: 25px;
-    border-radius: 8px;
-    border-style: groove;
-    transform: scale(1);
-    transition: all 0.3s ease-in-out;
+    border:0;
 }
 
-.navbar-brand {
+.my-custom-navbar .nav-link {
+  margin-top: 5px;
+  color:var(--color-text-headings);
+}
+.my-custom-navbar .nav-link:hover {
+  color:var(--color-primary); 
+}
+
+.my-custom-navbar .navbar-brand {
+  margin-right: 1rem;
+    color: var(--color-text-headings);
+    font-family: var(--font-primary);
+    font-size: 30px;
     padding: 5px 12px 5px 12px;
     border-radius: 8px;
     transform: scale(1);
     transition: all 0.3s ease-in-out;
+}
+a {
+  font-family: var(--font-primary);
+  font-size: 20px;
 }
 
 .list-group-item {
@@ -199,14 +220,14 @@ h1 {
   }
   
   .input-group .btn {
-    background-color: #1f8ef1;
+    background-color: var(--color-primary);
     border-radius: 25px;
     border: none;
     padding: 16px;
   }
   
   .input-group .btn:hover {
-    background-color: #155a8a;
+    background-color: var(--color-text-headings);
   }
   
   .input-group .btn:focus {
@@ -231,47 +252,16 @@ h1 {
     color: #888; 
   }
   
-  @media (max-width: 576px) {
-    .input-group {
-      width: 100%;
-    }
+  .btn-primary {
+    font-family: var(--font-primary);
+    position: relative;
+    background-color: #95761A;
+    color: var(--bg-color-secondary);
+    border: 0px;
   }
   
-  .header {
-    background-image: url('../images/hero-bg.jpeg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    height: 700px; 
-    display: flex;
-    justify-content: center; 
-    align-items: center;  
-  }
-
-  .carousel {
-    margin-left:28%;
-    width: 50%;
-    height: 100%;
-
-  }
-  
-.carousel-item img {
-    width: 100%;
-    height: 73%;
-    object-fit: cover;
-  }
-  
-
-  .carousel-inner {
-    display: flex;
-    justify-content: center; 
-    align-items: center;  
-    overflow: hidden;
-    height: 650px;
-  }
-  
-
-  .carousel-item .card {
-    margin: 10px;
-  }
-  
+#search-button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-left: 5px;
+}

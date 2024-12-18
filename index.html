@@ -6,65 +6,68 @@
     <title>Bartender's Recipe Book</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg my-custom-navbar">
-        <h1>Bartender's Recipe Book</h1>
+        <a class="navbar-brand" href="#">Bartender's Recipe Book</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#recipes">Recipes</a>
+                    <a class="nav-link" href="#">Recipes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#exampleModalCenter" data-toggle = "modal" data-target= "#exampleModalCenter">Add Recipe</a>
+                    <a class="nav-link" href="#">Add Recipe</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="drinkInput">Drink Name</label>
-                <input type="drink" class="form-control" id="drinkInput" aria-describedby="emailHelp" placeholder="Enter Drink Name">
-              </div>
-              <div class="form-group">
-                <label for="ingredientsInput">Ingredients</label>
-                <input type="ingredients" class="form-control" id="ingredientsInput" placeholder="Separate ingredients using ','">
-              </div>
-              <div class="form-group">
-                <label for="stepsInput">Steps</label>
-                <input type="steps" class="form-control" id="stepsInput" placeholder="Separate steps using ','">
-              </div>
-              <button type="submit" class="btn-primary" data-dismiss="modal">Submit</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <header>
-    <div class="header">
-        <section>
-        <h1>BARTENDER</h1>
-        <p><em>Shaken, not stirred</em></p>
+      <div class="header">
+        <section class="hero" aria-label="banner">
+  
+          <div class="banner-card">
+    
+            <div class="container mt-5">
+              <h1>Welcome to Bartender's Recipe Book</h1>
+              <p>Your go-to resource for cocktail recipes!</p>
+            </div>
+    
+            <div class="input-group mb-3" data-search-form>
+              <input type="text" 
+                class="form-control search-field" 
+                name="search" 
+                aria-label="Search drinks" 
+                aria-describedby="search-button" 
+                placeholder="Search drinks..."
+                data-search-field>
+              
+              <button type="button" class="btn btn-primary" id="search-button">
+                <span class="material-symbols-outlined" aria-hidden="true">search</span>
+              </button>
+            </div>
+            
+    
+            <p class="label-medium">
+              Search for any drink recipe e.g: manhattan, mojito, gin tonic, apple juice...
+            </p>
+    
+          </div>
+    
         </section>
-        <aside><img src="assets/images/drink.jpg"></aside>
-    </div>
-    </header>
-    <main id = "recipes">
+      </div>
+      </header>
     <section class="box" id="cards-holder">
+
     <div class="card" style="width: 21rem;">
         <img src="https://punchdrink.com/wp-content/uploads/2013/09/Manhattan.jpg" 
         class="card-img-top" alt="Manhattan cocktail">
@@ -72,39 +75,30 @@
           <h5 class="card-title">Manhattan</h5>
           <p class="card-text">Enduring classics</p>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+
             Edit Cocktail
           </button>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Edit Cocktail</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Ingredients</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                    </div>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput2">Steps</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                    </div>
-                  </form>
+                  HELLO
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-primary">Edit changes</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="card" style="width: 21rem;">
         <img src="https://www.liquor.com/thmb/YIS3-c_-E2ZdCR5kYtPmF8SMN7o=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/brandy-old-fashioned-720x720-primary-4416daf388d440fb852f824febdc2557.jpg" 
         class="card-img-top" 
@@ -125,27 +119,17 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Ingredients</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                    </div>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput2">Steps</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                    </div>
-                  </form>
+                  HELLO
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-primary">Edit changes</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="card" style="width: 21rem;">
         <img src="https://www.liquor.com/thmb/sYX_sTKUpyagRermLA31SMLF3-8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__liquor__2019__09__18090535__Gin-and-Tonic-720x720-recipe-c2e32c4cf53c4ed7a4de20af8e862a12.jpg"
         class="card-img-top" 
@@ -166,77 +150,26 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Ingredients</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                    </div>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput2">Steps</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                    </div>
-                  </form>
+                  HELLO
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-primary">Edit changes</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="card" style="width: 21rem;">
         <img src="https://cdn.thefreshmancook.com/wp-content/uploads/2024/08/Copy-of-Copy-of-Thefreshmancook-2024-08-02T015231.455-1024x1024.jpg" 
         class="card-img-top" 
         alt="jack and coke">
         <div class="card-body">
           <h5 class="card-title">Jack & Coke</h5>
-          <p class="card-text">We took some Jack and added some Coke to It</p>
+          <p class="card-text">We took some Jack and some Coke</p>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Edit Cocktail
-          </button>
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Edit Cocktail</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Ingredients</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                    </div>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput2">Steps</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" style="width: 21rem;">
-        <img src="https://mezcalpro.com/wp-content/uploads/2023/05/mezcal-mojito-recipe.png" 
-        class="card-img-top" 
-        alt="Mojito cocktail">
-        <div class="card-body">
-          <h5 class="card-title">Mojito</h5>
-          <p class="card-text">Number one hated cocktail in the world</p>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Edit Cocktail
+            Edit Recipe
           </button>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -248,27 +181,48 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Ingredients</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                    </div>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput2">Steps</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                    </div>
-                  </form>
+                  HELLO
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-primary">Edit changes</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
+      <div class="card" style="width: 21rem;">
+        <img src="https://mezcalpro.com/wp-content/uploads/2023/05/mezcal-mojito-recipe.png" 
+        class="card-img-top" 
+        alt="Mojito cocktail">
+        <div class="card-body">
+          <h5 class="card-title">Mojito</h5>
+          <p class="card-text">Number one hated cocktail in the world</p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Edit Recipe
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  HELLO
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Edit changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="card" style="width: 21rem;">
         <img src="https://8thwondertea.com/cdn/shop/articles/custom_resized_175073ac-3882-473d-9cc7-b98eebd67d13_2048x.jpg?v=1678563564" 
         class="card-img-top" 
@@ -277,46 +231,32 @@
           <h5 class="card-title">Apple juice</h5>
           <p class="card-text">Fex and Jason don't drink, sorry</p>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Edit Cocktail
+            Edit Recipe
           </button>
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">Edit Cocktail</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Ingredients</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-                    </div>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput2">Steps</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-                    </div>
-                  </form>
+                  HELLO
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-primary">Edit changes</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
     </section>
-    
-    </main>
-    <script src="./assets/js/script.js"></script>
-    <!-- <script src="./assets/js/theme.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.2/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
