@@ -8,23 +8,21 @@ let recipes;
 
 button.addEventListener('click', function () {
     event.preventDefault();
-    const storedArray = localStorage.getItem('drinkRecipes');
-    const array = storedArray ? JSON.parse(storedArray) : [];
+    // const storedArray = localStorage.getItem('drinkRecipes');
+    // const array = storedArray ? JSON.parse(storedArray) : [];
     const ingredientsArray = ingredientsInput.value.split(",");
     const stepsArray = stepsInput.value.split(",");
     const newRecipe = {
-        drinkName: drinkNameInput.value.trim(),
+        name: drinkNameInput.value.trim(),
         ingredients: ingredientsArray,
         steps: stepsArray,
     }
-    array.push(newRecipe);
-    localStorage.setItem('drinkRecipes', JSON.stringify(array));
-    const test = JSON.parse(localStorage.getItem('drinkRecipes'));
-    console.log(test[0]);
+    recipes.push(newRecipe);
+    writeLocalStorage();
+    createCardsFromData();
 });
 
 function writeLocalStorage() {
-    console.log('wriring recipes ', recipes)
     localStorage.setItem('drinkRecipes', JSON.stringify(recipes));
 }
 
@@ -65,7 +63,6 @@ function fillCardCarousel() {
     const carousel = document.getElementById("recipes");
     carousel.innerHTML = "";
     for (recipe of recipes) {
-        console.log('appending card for ' + recipe.title)
         carousel.appendChild(renderCard(recipe));
     }
 }
@@ -127,9 +124,7 @@ function createCardsFromData() {
     const charizard = document.getElementById("cards-holder")
     let html = '';
     for (let i = 0; i < recipes.length; i++) {
-        console.log("creating card: ", recipes[i])
         const card = renderRecipe(i, recipes[i]);
-        console.log(card);
         html = html + card;
     }
     charizard.innerHTML = html;
@@ -139,7 +134,7 @@ function createCardsFromData() {
 
 // Execute starter code when application loads:
 
-console.log("loading")
+
 recipes = readLocalStorage();
 
 createCardsFromData();
@@ -158,11 +153,8 @@ function updateRecipe(index, ingredients, steps) {
 }
 
 document.getElementById('cards-holder').addEventListener('click', function(event) {
-  console.log(event);
-  console.log(event.target.getAttribute('class'))
   if (event.target.getAttribute('class') === 'btn btn-primary' && event.target.textContent == 'Save changes') {
     const index = event.target.dataset.index;
-    console.log ("save changes for ", index)
     updateRecipe(index, getIngredientsInput(index), getStepsInput(index));
     writeLocalStorage();
     createCardsFromData();
