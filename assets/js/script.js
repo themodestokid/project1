@@ -8,20 +8,20 @@ let recipes;
 
 button.addEventListener('click', function () {
     event.preventDefault();
-    let storedArray = localStorage.getItem('drinkRecipes');
-    let array = storedArray ? JSON.parse(storedArray) : [];
+    const storedArray = localStorage.getItem('drinkRecipes');
+    const array = storedArray ? JSON.parse(storedArray) : [];
+    const ingredientsArray = ingredientsInput.value.split(",");
+    const stepsArray = stepsInput.value.split(",");
     const newRecipe = {
         drinkName: drinkNameInput.value.trim(),
-        ingredients: ingredientsInput.value.trim(),
-        steps: stepsInput.value.trim(),
+        ingredients: ingredientsArray,
+        steps: stepsArray,
     }
     array.push(newRecipe);
     localStorage.setItem('drinkRecipes', JSON.stringify(array));
     const test = JSON.parse(localStorage.getItem('drinkRecipes'));
     console.log(test[0]);
 });
-    // global array of drink recipes
-
 
 function writeLocalStorage() {
     console.log('wriring recipes ', recipes)

@@ -23,7 +23,7 @@
     background-color: var(--light-background);
 }
 .header {
-    margin-top: 10px;
+    margin-top: 5%;
     display:flex;
     flex-flow:row;
     justify-content: center;
