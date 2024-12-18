@@ -87,10 +87,10 @@ function renderRecipe(index, recipe) {
     <div class="card-body">
       <h5 class="card-title">${recipe.name}</h5>
       <ul class="card-text">${listFromArray(recipe.ingredients)}</ul>
-      <ol class="card-text">${listFromArray(recipe.steps)}</ul>      <button type="button" class="btn btn-primary" data-toggle="modal" data-index="${index}" data-target="#exampleModal">
+      <ol class="card-text">${listFromArray(recipe.steps)}</ul>      <button type="button" class="btn btn-primary" data-toggle="modal" data-index="${index}" data-target="#editModal${index}">
         Edit Cocktail
       </button>
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="editModal${index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -102,18 +102,18 @@ function renderRecipe(index, recipe) {
             <div class="modal-body">
               <form>
                 <div class="form-group">
-                  <label for="formGroupExampleInput">Ingredients</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                  <label for="ingredientsInput${index}">Ingredients</label>
+                  <input type="text" class="form-control" id="ingredientsInput${index}" value="${recipe.ingredients.join(", ")}">
                 </div>
                 <div class="form-group">
-                  <label for="formGroupExampleInput2">Steps</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                  <label for="stepsInput${index}">Steps</label>
+                  <input type="text" class="form-control" id="stepsInput${index}" value="${recipe.steps.join(", ")}">
                 </div>
               </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" data-index="${index}" data-dismiss="modal">Save changes</button>
             </div>
           </div>
         </div>
@@ -129,6 +129,7 @@ function createCardsFromData() {
     for (let i = 0; i < recipes.length; i++) {
         console.log("creating card: ", recipes[i])
         const card = renderRecipe(i, recipes[i]);
+        console.log(card);
         html = html + card;
     }
     charizard.innerHTML = html;
@@ -141,3 +142,29 @@ function createCardsFromData() {
 recipes = readLocalStorage();
 
 createCardsFromData();
+
+function getIngredientsInput(index) {
+  return document.getElementById(`ingredientsInput${index}`).value.split(", ");  
+}
+
+function getStepsInput(index) {
+  return document.getElementById(`stepsInput${index}`).value.split(", ");  
+}
+
+function updateRecipe(index, ingredients, steps) {
+  recipes[index].ingredients = ingredients;
+  recipes[index].steps = steps;
+}
+
+document.getElementById('recipes').addEventListener('click', function(event) {
+  console.log(event);
+  console.log(event.target.getAttribute('class'))
+  if (event.target.getAttribute('class') === 'btn btn-primary' && event.target.textContent == 'Save changes') {
+    const index = event.target.dataset.index;
+    console.log ("save changes for ", index)
+    updateRecipe(index, getIngredientsInput(index), getStepsInput(index));
+    writeLocalStorage();
+    createCardsFromData();
+
+  }
+})
