@@ -161,3 +161,11 @@ document.getElementById('cards-holder').addEventListener('click', function(event
 
   }
 })
+
+document.querySelector('.nav-link[href="#top"]').addEventListener('click', function (event) {
+  event.preventDefault(); 
+  window.scrollTo({
+      top: 0, 
+      behavior: 'smooth' 
+  });
+});
