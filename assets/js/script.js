@@ -1,5 +1,3 @@
-    // if no recipes are found in local storage, use 
-    // starterDrinks array.
 const drinkNameInput = document.querySelector('#drinkInput');
 const ingredientsInput = document.querySelector('#ingredientsInput');
 const stepsInput = document.querySelector('#stepsInput');
@@ -8,8 +6,6 @@ let recipes;
 
 button.addEventListener('click', function () {
     event.preventDefault();
-    // const storedArray = localStorage.getItem('drinkRecipes');
-    // const array = storedArray ? JSON.parse(storedArray) : [];
     const ingredientsArray = ingredientsInput.value.split(",");
     const stepsArray = stepsInput.value.split(",");
     const newRecipe = {
@@ -43,7 +39,6 @@ function readLocalStorage() {
     {name: "Gin & Tonic", ingredients: ["Gin", "Tonic Water"], steps: ["combine gin and tonic water", "then mix"]}, 
     {name: "Jack & Coke", ingredients: ["Jack Daniels", "CocaCola"], steps: ["combine Jack Daniels and CocaCola", "then mix"]}, 
     {name: "Apple Juice", ingredients: ["Apple Juice"], steps: ["Pour Apple Juice"]}, 
-
     ];
     const data = localStorage.getItem('drinkRecipes');
     if (!data) {
@@ -87,6 +82,9 @@ function renderRecipe(index, recipe) {
       <ol class="card-text">${listFromArray(recipe.steps)}</ul>      <button type="button" class="btn btn-primary" data-toggle="modal" data-index="${index}" data-target="#editModal${index}">
         Edit Cocktail
       </button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-index="${index}" data-target="#deleteModal${index}">
+        Delete
+      </button>
       <div class="modal fade" id="editModal${index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -116,9 +114,36 @@ function renderRecipe(index, recipe) {
         </div>
       </div>
     </div>
+  </div>
+  <div class="modal fade" id="deleteModal${index}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Do you want to delete this drink?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+              <button type="button" class="btn btn-primary" data-index="${index}" data-dismiss="modal">Yes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>`
 
 }
+
+document.getElementById('cards-holder').addEventListener('click', function(event) {
+  if (event.target.getAttribute('class') === 'btn btn-primary' && event.target.textContent == 'Yes') {
+    const index2 = event.target.dataset.index;
+    recipes.splice(index2, 1);
+    writeLocalStorage();
+    location.reload();
+  }
+})
 
 function createCardsFromData() {
     const charizard = document.getElementById("cards-holder")
