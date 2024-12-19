@@ -7,7 +7,7 @@ const cardsHolder = document.getElementById('cards-holder');
 function searchRecipes() {
     const searchText = searchField.value.toLowerCase(); 
 
-    // Clear previous results
+
     cardsHolder.innerHTML = '';
 
     // Loop through all recipes and filter based on search query
@@ -45,3 +45,15 @@ searchButton.addEventListener('click', function () {
 
 recipes = readLocalStorage();
 createCardsFromData();
+
+// Clear button
+const clearButton = document.querySelector('#clear-button');
+
+function clearSearch() {
+    searchField.value = ''; 
+    createCardsFromData(); 
+}
+
+clearButton.addEventListener('click', function () {
+    clearSearch();
+});
