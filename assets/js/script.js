@@ -121,23 +121,8 @@ function renderRecipe(index, recipe) {
 }
 
 function createCardsFromData() {
-    const charizard = document.getElementById("cards-holder")
-    let html = '';
-    for (let i = 0; i < recipes.length; i++) {
-        const card = renderRecipe(i, recipes[i]);
-        html = html + card;
-    }
-    charizard.innerHTML = html;
-
-
+    searchRecipes();
 }
-
-// Execute starter code when application loads:
-
-
-recipes = readLocalStorage();
-
-createCardsFromData();
 
 function getIngredientsInput(index) {
   return document.getElementById(`ingredientsInput${index}`).value.split(", ");  
